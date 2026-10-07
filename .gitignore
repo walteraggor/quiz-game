@@ -1,0 +1,16 @@
+# Scores saved by the game on each machine
+leaderboard.json
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
