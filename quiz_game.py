@@ -31,7 +31,7 @@ except FileNotFoundError:
 # Function to ask a question and track correct answers
 def ask_question(question, correct_answer):
     start_time = time.time()  # Start the timer
-    user_answer = input(f"{question}: ").lower()
+    user_answer = input(f"{question}: ").strip().lower()  # Ignore stray spaces and capitals
     elapsed_time = time.time() - start_time  # Measure elapsed time
 
     if user_answer == correct_answer:
@@ -48,7 +48,7 @@ def run_quiz():
 
     # Choose a category
     print("Categories: General Knowledge, Science, Math")
-    category = input("Choose a category: ").title()
+    category = input("Choose a category: ").strip().title()
     
     if category not in quiz_data:
         print("Invalid category. Exiting.")
@@ -67,7 +67,7 @@ def run_quiz():
     print(f"Total time: {total_time:.2f} seconds.")
 
     # Ask for player name and update leaderboard
-    player_name = input("Enter your name for the leaderboard: ")
+    player_name = input("Enter your name for the leaderboard: ").strip()
     if player_name not in leaderboard:
         leaderboard[player_name] = {"score": total_score, "time": total_time}
     else:
